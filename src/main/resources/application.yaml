@@ -19,7 +19,7 @@ eureka:
       defaultZone: http://localhost:8888/eureka
 
 server:
-  port: 8080
+  port: 8181
   servlet:
     encoding:
       charset: UTF-8
