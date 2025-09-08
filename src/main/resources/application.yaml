@@ -36,24 +36,23 @@ spring:
         webflux:
           routes:
             - id: user
-              uri: lb://GREENGRAM-USER
+              uri: lb://mujiuniv-be-user
               predicates:
-                - Path=/api/user/**, /pic/profile/**
+                - Path=/api/account/**
+                - Path=/pic/profile/**
+                - Path=/api/mypage/**
 
-            - id: feed
-              uri: lb://GREENGRAM-FEED
+            - id: not-user
+              uri: lb://mujiuniv-be-not-user
               predicates:
-                - Path=/api/feed, /api/feed/comment, /pic/feed/**
-
-            - id: like
-              uri: lb://GREENGRAM-LIKE
-              predicates:
-                - Path=/api/feed/like
+                - Path=/api/notice/**
+                - Path=/api/schedule
+                - Path=/api/course/**
+                - Path=/api/application
+                - Path=/api/student/**
+                - Path=/api/professor/**
+                - Path=/api/staff/**
 
 
   jackson:
     default-property-inclusion: non_null
-
-
-
-
