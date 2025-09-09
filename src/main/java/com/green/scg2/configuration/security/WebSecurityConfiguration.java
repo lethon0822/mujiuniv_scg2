@@ -54,9 +54,7 @@ public class WebSecurityConfiguration {
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .securityContextRepository(new StatelessWebSessionSecurityContextRepository()) //세션 사용 안 함
-                .authorizeExchange(exchanges -> exchanges.pathMatchers("/api/feed", "/api/feed/**").authenticated()
-                        .pathMatchers(HttpMethod.GET,"/api/user").authenticated()
-                        .pathMatchers(HttpMethod.PATCH,"/api/user/pic").authenticated()
+                .authorizeExchange(exchanges -> exchanges.pathMatchers("/api/account/login").permitAll()
                         .anyExchange().permitAll()
                 )
                 .cors(corsSpec -> corsConfigurationSource())
