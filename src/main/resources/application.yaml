@@ -38,19 +38,14 @@ spring:
             - id: user
               uri: lb://RAINBOW-ACADEMIC-USER
               predicates:
-                - Path=/api/account/**, /api/user/**
+                - Path=/api/account/**, /api/user/**, /api/dept
 
 
             - id: function
               uri: lb://RAINBOW-ACADEMIC-FUNCTION
               predicates:
-                - Path=/api/notice/**
-                - Path=/api/schedule
-                - Path=/api/course/**
-                - Path=/api/application
-                - Path=/api/student/**
-                - Path=/api/professor/**
-                - Path=/api/staff/**
+                - Path=/api/notice/**, /api/schedule, /api/course/**, /api/application, /api/student/**, /api/professor/**, /api/staff/**, /api/semester
+
 
 
   jackson:
