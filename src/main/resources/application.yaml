@@ -41,7 +41,7 @@ spring:
                 - Path=/
 
             - id: function
-              uri: lb://RAINBOW-ACADEMIC-NOT-USER
+              uri: lb://RAINBOW-ACADEMIC-FUNCTION
               predicates:
                 - Path=/api/notice/**
                 - Path=/api/schedule
