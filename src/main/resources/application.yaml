@@ -44,7 +44,7 @@ spring:
             - id: function
               uri: lb://RAINBOW-ACADEMIC-FUNCTION
               predicates:
-                - Path=/api/notice/**, /api/schedule, /api/course/**, /api/application, /api/student/**, /api/professor/**, /api/staff/**, /api/semester
+                - Path=/api/notice/**, /api/schedule, /api/course/**, /api/application, /api/student/**, /api/professor/**, /api/staff/**, /api/semester/**
 
 
 
