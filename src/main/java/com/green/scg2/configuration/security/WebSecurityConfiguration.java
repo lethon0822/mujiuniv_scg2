@@ -8,10 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.ServerSecurityContextRepository;
 
@@ -54,7 +57,7 @@ public class WebSecurityConfiguration {
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .securityContextRepository(new StatelessWebSessionSecurityContextRepository()) //세션 사용 안 함
-                .authorizeExchange(exchanges -> exchanges.pathMatchers("/api/account/login").permitAll()
+                .authorizeExchange(exchanges -> exchanges.pathMatchers("/api/account/auth", "/api/account/check", "/api/account/login").permitAll()
                         .anyExchange().permitAll()
                 )
                 .cors(corsSpec -> corsConfigurationSource())
