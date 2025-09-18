@@ -19,11 +19,11 @@ spring:
               lower-case-service-id: true
           routes:
             - id: be_user
-              uri: lb://be_user
+              uri: lb://user
               predicates:
                 - Path=/api/account/**, /api/user/**, /api/dept/**, /api/dept, /api/staff/**
 
             - id: be_function
-              uri: lb://be_function
+              uri: lb://function
               predicates:
                 - Path=/api/notice/**, /api/notice, /api/schedule, /api/course/**, /api/application, /api/student/**, /api/professor/**, /api/staff/**, /api/semester/**
