@@ -1,5 +1,6 @@
 package com.green.scg2.configuration.utils;
 
+import org.springframework.core.env.Environment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpCookie;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -19,5 +20,7 @@ public class MyCookieUtils {
         }
         return cookies.get(0).getValue();
     }
+
+
 
 }
