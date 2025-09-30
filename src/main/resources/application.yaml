@@ -36,13 +36,13 @@ spring:
         webflux:
           routes:
             - id: user
-              uri: lb://RAINBOW-ACADEMIC-USER
+              uri: lb://MUJIUNIV-USER
               predicates:
                 - Path=/api/account/**, /api/user/**, /api/dept/**, /api/dept, /api/staff/**
 
 
             - id: function
-              uri: lb://RAINBOW-ACADEMIC-FUNCTION
+              uri: lb://MUJIUNIV-FUNCTION
               predicates:
                 - Path=/api/notice/**, /api/schedule/**, /api/course/**, /api/application/**, /api/student/**, /api/professor/**, /api/staff/**, /api/semester/**
 
