@@ -38,13 +38,13 @@ spring:
             - id: user
               uri: lb://MUJIUNIV-USER
               predicates:
-                - Path=/api/account/**, /api/user/**, /api/dept/**, /api/dept, /api/staff/**
+                - Path=/api/account/**, /api/user/**, /api/dept/**, /api/dept
 
 
             - id: function
               uri: lb://MUJIUNIV-FUNCTION
               predicates:
-                - Path=/api/notice/**, /api/schedule/**, /api/course/**, /api/application/**, /api/student/**, /api/professor/**, /api/staff/**, /api/semester/**
+                - Path=/api/notice/**, /api/schedule/**, /api/course/**, /api/application/**, /api/student/**, /api/professor/**, /api/semester/**,/api/staff/**
 
 
 
