@@ -38,7 +38,7 @@ spring:
             - id: user
               uri: lb://MUJIUNIV-USER
               predicates:
-                - Path=/api/account/**, /api/user/**, /api/dept/**, /api/dept
+                - Path=/api/account/**, /api/user/**, /api/dept/**
 
 
             - id: function
